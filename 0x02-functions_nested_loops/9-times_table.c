@@ -1,29 +1,30 @@
 #include "main.h"
 
 /**
-*print_sign -Printing of the sign of a number.
-*@n: the number of which the sign will be printed.
-*
-*Return: 1 if the number is greater than zero,
-*	0 if the number is zero,
-*	-1 if the number is less than zero.
+*times_table - Printing the 9 times table, starting with 0.
 */
-int print_sign(int n)
+void times_table(void)
 
 {
-	if (n > 0)
-	{
-		_putchar('+');
-		return (1);
-	}
-	else if (n == 0)
+	int num, mult, prod;
+
+	for (num = 0; num <= 9; num++)
 	{
 		_putchar('0');
-		return (0);
-	}
-	else
-	{
-		_putchar('-');
-		return (-1);
+
+		for (mult = 1; mult <= 9; mult++)
+		{
+			_putchar(',');
+			_putchar(' ');
+
+			prod = num * mult;
+			if (prod <= 9)
+				_putchar(' ');
+			else
+				_putchar((prod / 10) + '0');
+
+			_putchar((prod % 10) + '0');
+		}
+		_putchar('\n');
 	}
 }
