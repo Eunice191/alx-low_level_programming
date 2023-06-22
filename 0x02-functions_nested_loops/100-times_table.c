@@ -2,7 +2,7 @@
 
 /**
 *print_times_table - Printing the times table of the input,
-*			starting with 0.
+*starting with 0.
 *@n: the value of the times table to print.
 */
 void print_times_table(int n)
@@ -16,10 +16,8 @@ void print_times_table(int n)
 			_putchar('0');
 			for (mult = 1; mult <= n; mult++)
 			{
-
 				_putchar(',');
 				_putchar(' ');
-
 				prod = num * mult;
 				if (prod <= 99)
 					_putchar(' ');
@@ -40,4 +38,3 @@ void print_times_table(int n)
 		}
 	}
 }
-

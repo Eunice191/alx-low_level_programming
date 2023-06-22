@@ -1,28 +1,40 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-*main - Printing the sum of even-valued Fibonacci sequence
-*	terms not exceeding 4000000
-*
-*Return: Always 0.
+*print_times_table - Printing the times table of the input,
+*starting with 0.
+*@n: the value of the times table to print.
 */
-int main(void)
+void print_times_table(int n)
 {
-	unsigned long fib1 = 0, fib2 = 1, fibsum;
-	float tot_sum;
+	int num, mult, prod;
 
-	while (1)
+	if (n >= 0 && n <= 15)
 	{
-		fibsum = fib1 + fib2;
-		if (fibsum > 4000000)
-			break;
-		if ((fibsum % 2) == 0)
-			tot_sum += fibsum;
-
-		fib1 = fib2;
-		fib2 = fibsum;
+		for (num = 0; num <= n; num++)
+		{
+			_putchar('0');
+			for (mult = 1; mult <= n; mult++)
+			{
+				_putchar(',');
+				_putchar(' ');
+				prod = num * mult;
+				if (prod <= 99)
+					_putchar(' ');
+				if (prod <= 9)
+					_putchar(' ');
+				if (prod >= 100)
+				{
+					_putchar((prod / 100) + '0');
+					_putchar(((prod / 10)) % 10 + '0');
+				}
+				else if (prod <= 99 && prod >= 10)
+				{
+					_putchar((prod / 10) + '0');
+				}
+				_putchar((prod % 10) + '0');
+			}
+			_putchar('\n');
+		}
 	}
-	printf("%.0f\n", tot_sum);
-
-	return (0);
 }
