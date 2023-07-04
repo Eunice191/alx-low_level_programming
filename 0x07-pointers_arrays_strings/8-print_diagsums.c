@@ -1,12 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-*set_string - a program that sets the value of a pointer to a char
-*@to: the string for changing the pointer
-*@s: for change
+*print_diagsums - a program that prints the sum of the two
+*diagonals of a square matrix of integers
+*@size: maztrix's column's width
+*@a: beginning of matrix
 *Return: void
 */
-void set_string(char **s, char *to)
+void print_diagsums(int *a, int size)
 {
-	*s = to;
+	int m, s, o, p = 0, q = 0;
+
+	for (m = 0; m < size; m++)
+	{
+		o = (m * size) + m;
+		p += *(a + o);
+	}
+	for (s = 0; s < size; s++)
+	{
+		o = (s * size) + (size - 1 - s);
+		q += *(a + o);
+	}
+	printf("%i, %i\n", p, q);
 }
